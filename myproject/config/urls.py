@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import url
+
+from blog.views import helloworld
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # path('^$', helloworld)
+    url(r'^$', helloworld) #url 객체 만들어주기
 ]

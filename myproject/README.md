@@ -2,7 +2,7 @@
 
 ## 프로젝트 구조
 
-```
+```bash
 myproject   # 프로젝트 폴더
     ├── README.md
     ├── blog    # 앱 폴더
@@ -43,7 +43,7 @@ myproject   # 프로젝트 폴더
 
 * 글 객체 -> 클래스
 
-```
+```bash
 [글]
  ├─ 글쓴이  
  ├─ 글 제목  
@@ -55,7 +55,7 @@ myproject   # 프로젝트 폴더
 * blog/models.py에 글 객체(모델) 생성
   * 각 속성이 데이터베이스의 필드가 됨
   
-```
+```python
 from django.conf import settings
 from django.db import models
 
@@ -68,3 +68,23 @@ class Post(models.Model):
 ```
 
 - - -
+
+## 데이터베이스
+
+### Migrations
+
+* 정의
+Django의 모델에서 설정한 데이터베이스의 테이블 구조를 데이터베이스에 적용시키기 위한 기록한 것
+* config/settings.py의 INSTALLED_APPS의 앱들이 필요로 하는 테이블을 데이터베이스에 생성 -> db.sqlite3 파일 생성
+* `./manage.py makemigrations 앱이름` 결과 `migrations` 폴더에 데이터베이스 변경사항 정보가 기록됨
+* `./manage.py migrate`로 전체 앱에 변경사항 적용
+
+- - -
+
+## 관리자 페이지
+
+### 모델 등록
+
+* `admin.py`에서 관리자 페이지 관리
+* 위에서 만든 `Post` 모델을 관리자 페이지를 통해 사용하려면 `admin.py` 에 등록해야함
+
