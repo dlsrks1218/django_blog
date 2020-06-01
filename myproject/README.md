@@ -2,7 +2,7 @@
 
 ## 프로젝트 구조
 
-\`
+```
 myproject   # 프로젝트 폴더
     ├── README.md
     ├── blog    # 앱 폴더
@@ -23,7 +23,7 @@ myproject   # 프로젝트 폴더
     │   └── wsgi.py
     ├── db.sqlite3
     └── manage.py
-\`
+```
 
 ## 모델 생성
 
@@ -42,17 +42,20 @@ myproject   # 프로젝트 폴더
 ### Model
 
 * 글 객체 -> 클래스
-\`
+
+```
 [글]
  ├─ 글쓴이  
  ├─ 글 제목  
  ├─ 글 내용
  ├─ 글 생성 시간
  └─ 글 발행 시간
-\`
+```
 
 * blog/modls.py에 글 객체(모델) 생성
-\`
+  * 각 속성이 데이터베이스의 필드가 됨
+  
+```
 from django.conf import settings
 from django.db import models
 
@@ -62,5 +65,4 @@ class Post(models.Model):
     content = models.TextField(blank=True)
     created_date = models.DateTimeField(auto_now_add=True)
     published_date = models.DateTimeField(blank=True, null=True)
-\`
-    * 각 속성이 데이터베이스의 필드가 됨
+```
