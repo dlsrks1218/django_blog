@@ -2,6 +2,7 @@
 
 ## 프로젝트 구조
 
+\~
 myproject   # 프로젝트 폴더
     ├── README.md
     ├── blog    # 앱 폴더
@@ -22,6 +23,7 @@ myproject   # 프로젝트 폴더
     │   └── wsgi.py
     ├── db.sqlite3
     └── manage.py
+\~~
 
 ## 모델 생성
 
