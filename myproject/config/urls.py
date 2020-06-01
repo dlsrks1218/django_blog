@@ -21,6 +21,6 @@ from blog.views import helloworld
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('^$', helloworld)
-    url(r'^$', helloworld) #url 객체 만들어주기
+    url(r'^$', helloworld)  # url(정규표현식, 뷰) 객체 만들어주기
+    # ^$ -> 빈 문자열
 ]
