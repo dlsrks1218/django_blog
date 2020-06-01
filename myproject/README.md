@@ -7,7 +7,6 @@ myproject   # 프로젝트 폴더
     ├── README.md
     ├── blog    # 앱 폴더
     │   ├── __init__.py
-    │   ├── __pycache__
     │   ├── admin.py
     │   ├── apps.py
     │   ├── migrations
@@ -16,7 +15,6 @@ myproject   # 프로젝트 폴더
     │   └── views.py
     ├── config  # 설정 폴더
     │   ├── __init__.py
-    │   ├── __pycache__
     │   ├── asgi.py
     │   ├── settings.py
     │   ├── urls.py
@@ -24,6 +22,8 @@ myproject   # 프로젝트 폴더
     ├── db.sqlite3
     └── manage.py
 ```
+
+- - -
 
 ## 모델 생성
 
@@ -52,7 +52,7 @@ myproject   # 프로젝트 폴더
  └─ 글 발행 시간
 ```
 
-* blog/modls.py에 글 객체(모델) 생성
+* blog/models.py에 글 객체(모델) 생성
   * 각 속성이 데이터베이스의 필드가 됨
   
 ```
@@ -66,3 +66,5 @@ class Post(models.Model):
     created_date = models.DateTimeField(auto_now_add=True)
     published_date = models.DateTimeField(blank=True, null=True)
 ```
+
+- - -
